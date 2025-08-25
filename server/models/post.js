@@ -5,7 +5,9 @@ const PostSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    description: String,
+    description: {
+        type: String
+    },
     category: {
         type: String,
         enum: ['teaching', 'learning'],
