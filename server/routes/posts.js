@@ -9,8 +9,13 @@ router.post('/', async(req, res) =>{
 
         const newPost = new Post({
             title,
-            description;
+            description,
             category
         });
+
+        const savedPost = await newPost.save();
+        res.status(201).json(savedPost);
+    } catch (err) {
+        res.status(500).json({error: 'Failed to create post'});
     }
 })
